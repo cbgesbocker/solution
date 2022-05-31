@@ -24,4 +24,9 @@ describe("NodeCollector.js", () => {
     await nodeCollector.load();
     expect(getNodeSpy).toHaveBeenCalledWith("12345");
   });
+
+  test("NodeCollector should call getNode with the test ID", async () => {
+    await nodeCollector.load();
+    expect(nodeCollector).toMatchSnapshot();
+  });
 });

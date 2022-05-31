@@ -10,7 +10,6 @@
     - [Debugging](#debugging)
     - [Structure](#structure)
   - [External Reference Links](#external-reference-links)
-  - [Scripts](#scripts)
 
 ## Description
 
@@ -44,6 +43,4 @@ Solution for interview problem
 
 ## External Reference Links
 
-- [link](to)
-
-## Scripts
+- [Problem](https://woflow.notion.site/woflow/Nodes-on-Nodes-Challenge-350310b095174781a89a69fe7e325deb)

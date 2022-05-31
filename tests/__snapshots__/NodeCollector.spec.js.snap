@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NodeCollector.js NodeCollector should call getNode with the test ID 1`] = `
+NodeCollector {
+  "client": Object {
+    "getNode": [MockFunction] {
+      "calls": Array [
+        Array [
+          "12345",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": Promise {},
+        },
+      ],
+    },
+  },
+  "rnode": Object {
+    "child_node_ids": Array [],
+    "id": "12345",
+  },
+  "rootNodeId": "12345",
+  "tree": NodeTree {
+    "getNode": [MockFunction] {
+      "calls": Array [
+        Array [
+          "12345",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": Promise {},
+        },
+      ],
+    },
+    "max": Object {
+      "count": 0,
+      "node": Object {},
+    },
+    "nodeCountDict": Object {
+      "12345": 1,
+    },
+    "nodeDict": Object {
+      "12345": Object {
+        "child_node_ids": Array [],
+        "id": "12345",
+      },
+    },
+    "rootNode": Object {
+      "child_node_ids": Array [],
+      "id": "12345",
+    },
+    "visited": Array [
+      "12345",
+    ],
+  },
+}
+`;
