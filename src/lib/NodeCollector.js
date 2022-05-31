@@ -49,12 +49,12 @@ module.exports = class NodeCollector {
       `);
     }
   }
+
   outputCollectionMetrics() {
-    this.logCollectionMetrics();
     return {
       max: this.tree.max.count,
       maxNode: this.tree.max.node,
-      uniqueNodes: this.uniqueNodes,
+      uniqueNodes: this.tree.uniqueNodesCount(),
     };
   }
 };

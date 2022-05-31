@@ -6,6 +6,7 @@ async function main() {
   const nodeCollector = new NodeCollector(axiosClient, ROOT_NODE_ID);
   await nodeCollector.load();
   await nodeCollector.collectTreeData();
+  nodeCollector.logCollectionMetrics();
   const metricOutput = nodeCollector.outputCollectionMetrics();
   console.log(metricOutput);
 }
