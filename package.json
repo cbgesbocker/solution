@@ -4,7 +4,8 @@
   "description": "Solution for interview",
   "main": "index.js",
   "scripts": {
-    "main": "node main.js"
+    "main": "node src/main.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/cbgesbocker/solution/issues"
   },
-  "homepage": "https://github.com/cbgesbocker/solution#readme"
+  "homepage": "https://github.com/cbgesbocker/solution#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "jest": "^28.1.0"
+  },
+  "dependencies": {
+    "@types/jest": "^27.5.1",
+    "axios": "^0.27.2",
+    "lodash": "^4.17.21"
+  }
 }

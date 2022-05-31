@@ -34,6 +34,8 @@ Solution for interview problem
 | ------------ | -------------------- |
 | .vscode      | vscode files         |
 | node_modules | project dependencies |
+| src          | source code          |
+| tests        | testing code         |
 
 | Files               | Description                |
 | ------------------- | -------------------------- |
