@@ -7,6 +7,7 @@
   - [Description](#description)
   - [Getting Started](#getting-started)
     - [Installing Dependencies](#installing-dependencies)
+    - [Debugging](#debugging)
     - [Structure](#structure)
   - [External Reference Links](#external-reference-links)
   - [Scripts](#scripts)
@@ -23,15 +24,21 @@ Solution for interview problem
 
 ### Installing Dependencies
 
+### Debugging
+
+.vscode/launch.json contains debug launcher for vscode nodejs debugger
+
 ### Structure
 
-| Folders | Description |
-| ------- | ----------- |
+| Folders      | Description          |
+| ------------ | -------------------- |
+| .vscode      | vscode files         |
+| node_modules | project dependencies |
 
-| Files               | Description           |
-| ------------------- | --------------------- |
-| package.json        | project metadata      |
-| .vscode/launch.json | nodejs debug metadata |
+| Files               | Description                |
+| ------------------- | -------------------------- |
+| package.json        | project metadata           |
+| .vscode/launch.json | nodejs debug launch config |
 
 ## External Reference Links
 
