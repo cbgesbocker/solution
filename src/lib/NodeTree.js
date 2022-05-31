@@ -52,8 +52,9 @@ module.exports = class NodeTree {
           );
         }
       } catch (e) {
-        console.log(e);
         console.log("Failed to getNode by ID, ID passed: " + id);
+        console.log("Error caught", e);
+        console.log("Skipping the failed node, todo: add retry logic on axios");
       }
     }
   }
