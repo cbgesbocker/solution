@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NodeTree.js Collect tree data should setup the object metadata for data collection properly 1`] = `
+NodeTree {
+  "getNode": [MockFunction] {
+    "calls": Array [
+      Array [
+        "1234",
+      ],
+      Array [
+        "12345",
+      ],
+    ],
+    "results": Array [
+      Object {
+        "type": "return",
+        "value": Promise {},
+      },
+      Object {
+        "type": "return",
+        "value": Promise {},
+      },
+    ],
+  },
+  "max": Object {
+    "count": 1,
+    "node": Object {
+      "child_node_ids": Array [],
+      "id": "1234",
+    },
+  },
+  "nodeCountDict": Object {
+    "1234": 1,
+    "12345": 1,
+    "test-node": 1,
+  },
+  "nodeDict": Object {
+    "1234": Object {
+      "child_node_ids": Array [],
+      "id": "1234",
+    },
+    "12345": Object {
+      "child_node_ids": Array [],
+      "id": "12345",
+    },
+    "test-node": Object {
+      "child_node_ids": Array [
+        "1234",
+        "12345",
+      ],
+      "id": "test-node",
+    },
+  },
+  "rootNode": Object {
+    "child_node_ids": Array [
+      "1234",
+      "12345",
+    ],
+    "id": "test-node",
+  },
+  "visited": Array [
+    "test-node",
+    "1234",
+    "12345",
+  ],
+}
+`;

@@ -11,6 +11,9 @@ async function main() {
     "Total unique nodes count: " + nodeCollector.tree.uniqueNodesCount()
   );
   console.log("Max shared node: " + JSON.stringify(nodeCollector.tree.max));
+  console.log(
+    "Max shared node count: " + JSON.stringify(nodeCollector.tree.max.count)
+  );
 }
 
 main();
