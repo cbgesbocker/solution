@@ -17,10 +17,6 @@ module.exports = class NodeCollector {
     return this.rnode;
   }
 
-  async collectData() {
-    return await this.tree.collectTreeData();
-  }
-
   async load() {
     const {
       data: [node],
@@ -29,6 +25,9 @@ module.exports = class NodeCollector {
   }
 
   collectTreeData() {
+    if (!this.tree) {
+      throw new Error("Root node not set yet, tree missing");
+    }
     return this.tree.collectTreeData();
   }
 };
