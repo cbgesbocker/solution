@@ -1,0 +1,19 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "Solution for interview",
+  "main": "index.js",
+  "scripts": {
+    "run": "node "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbgesbocker/solution.git"
+  },
+  "author": "Conner Gesbocker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbgesbocker/solution/issues"
+  },
+  "homepage": "https://github.com/cbgesbocker/solution#readme"
+}
