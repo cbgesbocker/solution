@@ -34,12 +34,15 @@ Solution for interview problem
 | .vscode      | vscode files         |
 | node_modules | project dependencies |
 | src          | source code          |
+| src/lib      | shared code          |
 | tests        | testing code         |
 
 | Files               | Description                |
 | ------------------- | -------------------------- |
 | package.json        | project metadata           |
 | .vscode/launch.json | nodejs debug launch config |
+| src/consts          | CONSTANTS                  |
+| src/main.js         | Main script                |
 
 ## External Reference Links
 
