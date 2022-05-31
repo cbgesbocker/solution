@@ -19,7 +19,7 @@ Solution for interview problem
 
 - [x] Install nodejs v14.18.2
 - [x] Install project dependencies
-- [x] execute `yarn run` in terminal
+- [x] execute `yarn main` in terminal
 
 ### Installing Dependencies
 
@@ -28,9 +28,10 @@ Solution for interview problem
 | Folders | Description |
 | ------- | ----------- |
 
-| Files        | Description      |
-| ------------ | ---------------- |
-| package.json | project metadata |
+| Files               | Description           |
+| ------------------- | --------------------- |
+| package.json        | project metadata      |
+| .vscode/launch.json | nodejs debug metadata |
 
 ## External Reference Links
 
