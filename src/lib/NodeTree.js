@@ -13,6 +13,8 @@ module.exports = class NodeTree {
 
   nodeCountDict = {};
 
+  failedToCollect = [];
+
   max = { count: 0, node: {} };
 
   visited = [];
@@ -55,6 +57,7 @@ module.exports = class NodeTree {
         console.log("Failed to getNode by ID, ID passed: " + id);
         console.log("Error caught", e);
         console.log("Skipping the failed node, todo: add retry logic on axios");
+        this.failedToCollect.push(id);
       }
     }
   }

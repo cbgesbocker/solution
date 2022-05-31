@@ -2,6 +2,7 @@
 
 exports[`NodeTree.js Collect tree data should setup the object metadata for data collection properly 1`] = `
 NodeTree {
+  "failedToCollect": Array [],
   "getNode": [MockFunction] {
     "calls": Array [
       Array [

@@ -23,6 +23,7 @@ NodeCollector {
   },
   "rootNodeId": "12345",
   "tree": NodeTree {
+    "failedToCollect": Array [],
     "getNode": [MockFunction] {
       "calls": Array [
         Array [

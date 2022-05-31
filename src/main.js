@@ -6,13 +6,8 @@ async function main() {
   const nodeCollector = new NodeCollector(axiosClient, ROOT_NODE_ID);
   await nodeCollector.load();
   await nodeCollector.collectTreeData();
-  console.log(
-    "Total unique nodes count: " + nodeCollector.tree.uniqueNodesCount()
-  );
-  console.log("Max shared node: " + JSON.stringify(nodeCollector.tree.max));
-  console.log(
-    "Max shared node count: " + JSON.stringify(nodeCollector.tree.max.count)
-  );
+  const metricOutput = nodeCollector.outputCollectionMetrics();
+  console.log(metricOutput);
 }
 
 main();

@@ -30,4 +30,31 @@ module.exports = class NodeCollector {
     }
     return this.tree.collectTreeData();
   }
+
+  logCollectionMetrics() {
+    console.log(`
+    Successful Collection: 
+
+    Output: 
+
+    Total unique nodes count:   ${this.tree.uniqueNodesCount()}
+    Max shared node count:      ${JSON.stringify(this.tree.max.count)}
+    Max shared node metadata:   ${JSON.stringify(this.tree.max)}
+
+  `);
+    if (this.tree.failedToCollect.length) {
+      console.log(`
+
+      Failed to fetch: ${JSON.stringify(this.tree.failedToCollect)}
+      `);
+    }
+  }
+  outputCollectionMetrics() {
+    this.logCollectionMetrics();
+    return {
+      max: this.tree.max.count,
+      maxNode: this.tree.max.node,
+      uniqueNodes: this.uniqueNodes,
+    };
+  }
 };
