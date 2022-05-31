@@ -13,10 +13,21 @@ module.exports = class NodeTree {
 
   nodeCountDict = {};
 
+  max = { count: 0, node: {} };
+
   visited = [];
 
-  get uniqueNodesCount() {
+  uniqueNodesCount() {
     return this.visited.length;
+  }
+
+  setMaxNode(node) {
+    if (this.max.count < this.nodeCountDict[node.id]) {
+      this.max = {
+        count: this.nodeCountDict[node.id],
+        node,
+      };
+    }
   }
 
   async collectChildNodesRecursive(childNodeIds) {
@@ -30,11 +41,15 @@ module.exports = class NodeTree {
         this.nodeCountDict[id]++;
         this.nodeDict[node.id] = node;
 
+        this.setMaxNode(node);
+
         if (this.visited.includes(id)) {
           continue;
         } else {
           this.visited.push(node.id);
-          await this.collectChildNodesRecursive(node);
+          await this.collectChildNodesRecursive(
+            get(node, "child_node_ids", [])
+          );
         }
       } catch (e) {
         console.log(e);
