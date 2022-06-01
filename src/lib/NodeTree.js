@@ -32,36 +32,6 @@ module.exports = class NodeTree {
     }
   }
 
-  async collectChildNodesRecursive(childNodeIds) {
-    for await (let id of childNodeIds) {
-      try {
-        const {
-          data: [node],
-        } = await this.getNode(id);
-
-        this.nodeCountDict[id] = this.nodeCountDict[id] || 0;
-        this.nodeCountDict[id]++;
-        this.nodeDict[node.id] = node;
-
-        this.setMaxNode(node);
-
-        if (this.visited.includes(id)) {
-          continue;
-        } else {
-          this.visited.push(node.id);
-          await this.collectChildNodesRecursive(
-            get(node, "child_node_ids", [])
-          );
-        }
-      } catch (e) {
-        console.log("Failed to getNode by ID, ID passed: " + id);
-        console.log("Error caught", e);
-        console.log("Skipping the failed node, todo: add retry logic on axios");
-        this.failedToCollect.push(id);
-      }
-    }
-  }
-
   async collectTreeData(rootNode = this.rootNode) {
     let childNodeIds = get(rootNode, ["child_node_ids"], []);
     try {
@@ -69,7 +39,33 @@ module.exports = class NodeTree {
       if (childNodeIds.length === 0) {
         return { done: true };
       } else {
-        await this.collectChildNodesRecursive(childNodeIds);
+        for await (let id of childNodeIds) {
+          try {
+            const {
+              data: [node],
+            } = await this.getNode(id);
+
+            this.nodeCountDict[id] = this.nodeCountDict[id] || 0;
+            this.nodeCountDict[id]++;
+            this.nodeDict[node.id] = node;
+
+            this.setMaxNode(node);
+
+            if (this.visited.includes(id)) {
+              continue;
+            } else {
+              this.visited.push(node.id);
+              await this.collectTreeData(node);
+            }
+          } catch (e) {
+            console.log("Failed to getNode by ID, ID passed: " + id);
+            console.log("Error caught", e);
+            console.log(
+              "Skipping the failed node, todo: add retry logic on axios"
+            );
+            this.failedToCollect.push(id);
+          }
+        }
       }
     } catch (e) {
       console.log("Failed to collect tree data");
